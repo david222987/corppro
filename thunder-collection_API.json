@@ -1,0 +1,169 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "API-G-PRODUCTS",
+    "collectionId": "a5c8da73-fe8c-4ca8-bb06-025b9595fbe4",
+    "dateExported": "2025-02-04T16:43:31.259Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f49d9bb3-a321-4e0f-94f5-08d861bd7370",
+            "colId": "a5c8da73-fe8c-4ca8-bb06-025b9595fbe4",
+            "containerId": "",
+            "name": "POST-CREATE-USER",
+            "url": "http://localhost/api-v2/routes/auth.php?action=register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-02-04T16:42:12.000Z",
+            "modified": "2025-02-04T16:42:12.000Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "action",
+                    "value": "register",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"nombre\": \"Manuel\",\r\n  \"usuario\": \"manuel\",\r\n  \"email\": \"manuel@gmail.com\",\r\n  \"clave\": \"MiClaveSegura123$\"\r\n}\r\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "a2721464-f881-4417-b941-cdce4c5928be",
+            "colId": "a5c8da73-fe8c-4ca8-bb06-025b9595fbe4",
+            "containerId": "",
+            "name": "POST-LOGIN-USER",
+            "url": "http://localhost/api-v2/routes/auth.php?action=login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-02-04T16:42:22.384Z",
+            "modified": "2025-02-04T16:42:22.384Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "action",
+                    "value": "login",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"manuel@gmail.com\",\n  \"clave\": \"MiClaveSegura123$\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "ff46a46b-7108-4413-9a73-dfd705dd3b1e",
+            "colId": "a5c8da73-fe8c-4ca8-bb06-025b9595fbe4",
+            "containerId": "",
+            "name": "POST-CREATE-PRODUCTO",
+            "url": "http://localhost/api-v2/routes/productos.php",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-02-04T16:42:32.848Z",
+            "modified": "2025-02-04T16:42:32.848Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"nombre\": \"Mesa\",\r\n  \"descripcion\": \"mesa de color negro\",\r\n  \"precio\": \"200.00\",\r\n  \"imagen\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_QMpgNT_rTxob9OWQRKC_cVsRbZFC1j9JJA&s\",\r\n  \"usuario_id\": 7\r\n}\r\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "06578722-6f1d-46eb-bc0a-5433511c1a74",
+            "colId": "a5c8da73-fe8c-4ca8-bb06-025b9595fbe4",
+            "containerId": "",
+            "name": "GET-ID-PRODUCTO",
+            "url": "http://localhost/api-v2/routes/productos.php?id=4",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-02-04T16:42:41.096Z",
+            "modified": "2025-02-04T16:42:41.096Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "4",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "6c91d669-bf8d-4b86-9c5a-1fe02daca0a8",
+            "colId": "a5c8da73-fe8c-4ca8-bb06-025b9595fbe4",
+            "containerId": "",
+            "name": "GET-LIST-PRODUCTO",
+            "url": "http://localhost/api-v2/routes/productos.php",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2025-02-04T16:42:46.408Z",
+            "modified": "2025-02-04T16:42:46.408Z",
+            "headers": []
+        },
+        {
+            "_id": "8aad0b34-8300-48be-ad8e-7763704097ab",
+            "colId": "a5c8da73-fe8c-4ca8-bb06-025b9595fbe4",
+            "containerId": "",
+            "name": "PUT-UPDATE-PRODUCTO",
+            "url": "http://localhost/api-v2/routes/productos.php?id=3",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2025-02-04T16:43:06.584Z",
+            "modified": "2025-02-04T16:43:06.584Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "3",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Laptop Pro 2\",\n  \"descripcion\": \"Laptop gamer de última generación\",\n  \"precio\": \"1800.00\",\n  \"imagen\": \"laptop-pro.jpg\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "06f6f24f-08b5-48c8-859e-6e34b4b77ea5",
+            "colId": "a5c8da73-fe8c-4ca8-bb06-025b9595fbe4",
+            "containerId": "",
+            "name": "DELETE-ID-PRODUCTO",
+            "url": "http://localhost/api-v2/routes/productos.php?id=3",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2025-02-04T16:43:10.777Z",
+            "modified": "2025-02-04T16:43:10.777Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "3",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "0655fd55-ec16-4855-9c9b-e2ab6c6bf0b1",
+            "colId": "a5c8da73-fe8c-4ca8-bb06-025b9595fbe4",
+            "containerId": "",
+            "name": "GET-DESTROY-LOGIN",
+            "url": "http://localhost/api-v2/routes/auth.php?action=logout",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2025-02-04T16:43:15.256Z",
+            "modified": "2025-02-04T16:43:15.256Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "action",
+                    "value": "logout",
+                    "isPath": false
+                }
+            ]
+        }
+    ],
+    "ref": "wAUnROJBhyWkxqd1aX-VZdw36U0M_xaJAeCfuuk3c8thF-K00n5M9d8Xg2aQoqQ7eA8Vyjvf-IxSQlbuj7SLxQ"
+}

@@ -1,0 +1,117 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "API-REST",
+    "collectionId": "85f4cce5-6635-4594-98b9-a16121d8b033",
+    "dateExported": "2025-02-04T21:28:00.439Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b3d235dd-aae3-460c-85b7-b10eda13e4fe",
+            "colId": "85f4cce5-6635-4594-98b9-a16121d8b033",
+            "containerId": "",
+            "name": "POST-CREATE-USUARIOS",
+            "url": "http://localhost/api-v2/routes/register.php",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-02-04T17:33:05.752Z",
+            "modified": "2025-02-04T18:02:46.169Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"nombre\": \"5\",\r\n    \"usuario\": \"5\",\r\n    \"email\": \"5@gmail.com\",\r\n    \"clave\": \"contraseña123#\"\r\n}\r\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "8e3f3b6f-dff2-4b89-ac6c-9dd1e55b59f4",
+            "colId": "85f4cce5-6635-4594-98b9-a16121d8b033",
+            "containerId": "",
+            "name": "POST-LOGIN-USUARIOS",
+            "url": "http://localhost/api-v2/routes/login.php",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-02-04T18:07:00.162Z",
+            "modified": "2025-02-04T18:09:02.659Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"5@gmail.com\",\n    \"clave\": \"contraseña123#\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d220f839-bc54-426d-9222-1a5ce9046510",
+            "colId": "85f4cce5-6635-4594-98b9-a16121d8b033",
+            "containerId": "",
+            "name": "GET-LIST-PRODUCTOS",
+            "url": "http://localhost/api-v2/routes/productos/index.php",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-02-04T18:09:24.883Z",
+            "modified": "2025-02-04T18:17:50.441Z",
+            "headers": []
+        },
+        {
+            "_id": "9587285b-d5eb-4ed4-b238-104c2b9b26b6",
+            "colId": "85f4cce5-6635-4594-98b9-a16121d8b033",
+            "containerId": "",
+            "name": "POST-CREATE-PRODUCTOS",
+            "url": "http://localhost/api-v2/routes/productos/create.php",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2025-02-04T18:20:39.542Z",
+            "modified": "2025-02-04T18:21:54.874Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Audifonos\",\n  \"descripcion\": \"audifonos verdes\",\n  \"precio\": \"100.00\",\n  \"imagen\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_QMpgNT_rTxob9OWQRKC_cVsRbZFC1j9JJA&s\",\n  \"usuario_id\": 17\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "16903d36-0a71-40d2-8e1e-5c2dfc69d231",
+            "colId": "85f4cce5-6635-4594-98b9-a16121d8b033",
+            "containerId": "",
+            "name": "PUT-UPDATE-PRODUCTOS",
+            "url": "http://localhost/api-v2/routes/productos/update.php?id=4",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2025-02-04T18:23:05.622Z",
+            "modified": "2025-02-04T18:24:26.081Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "4",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Silla Gamer Ergonómica\",\n  \"descripcion\": \"Silla Gaemer Ergonómica de color negro\",\n  \"precio\": \"350.00\",\n  \"imagen\": \"silla-pro.jpg\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "a80ded55-974a-4cfa-9e5e-9a16da23b714",
+            "colId": "85f4cce5-6635-4594-98b9-a16121d8b033",
+            "containerId": "",
+            "name": "DELETE-ID-PRODUCTOS",
+            "url": "http://localhost/api-v2/routes/productos/delete.php?id=4",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2025-02-04T18:25:00.526Z",
+            "modified": "2025-02-04T18:25:26.067Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "4",
+                    "isPath": false
+                }
+            ]
+        }
+    ],
+    "ref": "4nkO9iP3et6e5P1LMDqz02JU57RHd_5q6H8MVHLSpdYBC5KKX86vSMF6hR66C7wAQdzyRxU5HOBGY1h48YWySg"
+}
