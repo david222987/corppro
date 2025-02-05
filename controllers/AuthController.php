@@ -58,38 +58,51 @@ class AuthController {
     
 
     // LOGIN DE USUARIO
-    public function login() {
-        $data = json_decode(file_get_contents("php://input"), true);
+public function login() {
+    $data = json_decode(file_get_contents("php://input"), true);
 
-        // Verificar que los campos requeridos existan
-        if (!isset($data['email'], $data['clave'])) {
-            http_response_code(400);
-            echo json_encode(["error" => "Todos los campos son obligatorios"]);
-            return;
-        }
-
-        // Verificar si el usuario existe
-        $usuario = $this->usuarioModel->obtenerUsuarioPorEmail($data['email']);
-        if (!$usuario) {
-            http_response_code(404);
-            echo json_encode(["error" => "Usuario no encontrado"]);
-            return;
-        }
-
-        // Verificar la contraseña
-        if (!password_verify($data['clave'], $usuario['clave'])) {
-            http_response_code(401);
-            echo json_encode(["error" => "Contraseña incorrecta"]);
-            return;
-        }
-
-        // Iniciar la sesión y almacenar el usuario en la sesión
-        session_start();
-        $_SESSION['usuario'] = $usuario;
-
-        http_response_code(200);
-        echo json_encode(["message" => "Inicio de sesión exitoso"]);
+    // Verificar que los campos requeridos existan
+    if (!isset($data['email'], $data['clave'])) {
+        http_response_code(400);
+        echo json_encode(["error" => "Todos los campos son obligatorios"]);
+        return;
     }
+
+    // Validar formato de contraseña (NEW) 
+    if (!$this->validarFormatoClave($data['clave'])) {
+        http_response_code(400);
+        echo json_encode(["error" => "La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y caracteres especiales"]);
+        return;
+    }
+
+    // Verificar si el usuario existe
+    $usuario = $this->usuarioModel->obtenerUsuarioPorEmail($data['email']);
+    if (!$usuario) {
+        http_response_code(404);
+        echo json_encode(["error" => "Usuario no encontrado"]);
+        return;
+    }
+
+    // Verificar la contraseña
+    if (!password_verify($data['clave'], $usuario['clave'])) {
+        http_response_code(401);
+        echo json_encode(["error" => "Contraseña incorrecta"]);
+        return;
+    }
+
+    // Iniciar la sesión y almacenar el usuario en la sesión
+    session_start();
+    $_SESSION['usuario'] = $usuario;
+
+    http_response_code(200);
+    echo json_encode(["message" => "Inicio de sesión exitoso"]);
+}
+
+// Función para validar el formato de la contraseña (NEW)
+private function validarFormatoClave($clave) {
+    return preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$/', $clave);
+}
+
 
     // CERRAR SESION
     public function logout() {
